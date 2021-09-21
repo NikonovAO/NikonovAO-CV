@@ -73,20 +73,128 @@ body {
 }
 
 main {
-    background-color:lightcyan;
+    background-color: lightcyan;
 }
 
 .main__wrapper {
-    padding-top: 50px;
-    background-color:lightskyblue;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    background-color: lightskyblue;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main__contacts {
+    max-width: 340px;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.main__contacts-hi {
+    padding-bottom: 10px;
+}
+
+.main__contacts-name {
+    font-weight: 700;
+    font-size: 34px;
+    border-bottom: 1px solid #434343;
+    padding: 10px 0 20px;
+}
+
+.main__contacts-job {
+    border-bottom: 1px solid #434343;
+    padding: 20px 0 20px;
+}
+
+.soc-menu__list {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #434343;
+    padding: 20px 0;
+}
+
+.soc-menu__item:not(:last-child) {
+    margin-right: 20px;
+}
+
+.soc-menu__item:hover {
+    transform: scale(1.1, 1.1);
+    transition: 0.3s;
+}
+
+.contacts-map {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid#434343;
+    padding: 20px 0;
+}
+
+.contacts-map__link {
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.contacts-map__link:hover {
+    transform: scale(1.1, 1.1);
+    transition: 0.3s;
+}
+
+.button-block {
+    padding: 20px 0;
+}
+
+.button {
+    display: inline-block;
+    vertical-align: middle;
+    width: 160px;
+    height: 44px;
+    border-radius: 22px;
+    background-color: rgb(130, 150, 150);
+    color: #434343;
+    line-height: 44px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.button:hover {
+    background-color: bisque;
+    transition: 0.3s;
+}
+
+.icons:hover {
+    fill:bisque
+}
+
+.main__foto {
+    min-width: 380px;
+    min-height: 380px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0px lightskyblue, 0 0 30px #333;
+    overflow: hidden;
+    position: relative;
+}
+
+.main__foto img {
+    position: absolute;
+    top: -750px;
+    right: -170px;
+}
+
+.about {
+    background-color: lightskyblue;
     min-height: 2000px;
 }
 
-h1 {
+.about__wrapper {
+    background-color: lightcyan;
+}
+
+.about__title {
     font-weight: 700;
     font-size: 34px;
-}
-p {
-    font-weight: 600;
-    font-size: 20px;
+    text-align: center;
+    padding: 20px;
 }
