@@ -165,7 +165,7 @@ main {
 }
 
 .icons:hover {
-    fill:bisque
+    fill: bisque
 }
 
 .main__foto {
@@ -190,11 +190,44 @@ main {
 
 .about__wrapper {
     background-color: lightcyan;
+    font-weight: 700;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .about__title {
+    width: 100%;
     font-weight: 700;
     font-size: 34px;
     text-align: center;
     padding: 20px;
+}
+
+.about__work {}
+
+.work {}
+
+.work__title, .education__title, .courses__title {
+    font-variant-caps: petite-caps;
+    font-weight: 900;
+    font-size: 22px;
+    padding-bottom: 10px;
+}
+
+.work__list {}
+
+.work__item, .education__item, .courses__item {
+    padding-bottom: 10px;
+}
+
+.work__company span, .work__function span, .education__company span, .education__function span, .courses__company span, .courses__name span {
+    font-weight: 800;
+    color: #606060;
+    padding-left: 5px;
+}
+
+.work__date span, .education__date span, .courses__date span {
+    color: #808080;
+    font-weight: 800;
+    font-size: 14px;
 }
