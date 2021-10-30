@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 body {
     font-family: Montserrat, sans-serif;
+    line-height: 130%;
 }
 
 .wrapper {
@@ -17,6 +18,7 @@ body {
     z-index: 10;
     opacity: 0.8;
     background-color: antiquewhite;
+    background-color: cadetblue;
 }
 
 .header__wrapper {
@@ -35,14 +37,10 @@ body {
     white-space: nowrap;
 }
 
-.menu {}
-
 .menu__list {
     list-style-type: none;
     display: flex;
 }
-
-.menu__item {}
 
 .menu__item:not(:last-child) {
     margin-right: 20px;
@@ -72,8 +70,11 @@ body {
     transform: scale(1);
 }
 
+/*----------Main----------*/
+
 main {
     background-color: lightcyan;
+    background-color: lightskyblue;
 }
 
 .main__wrapper {
@@ -91,15 +92,11 @@ main {
     font-size: 20px;
 }
 
-.main__contacts-hi {
-    padding-bottom: 10px;
-}
-
 .main__contacts-name {
     font-weight: 700;
     font-size: 34px;
     border-bottom: 1px solid #434343;
-    padding: 10px 0 20px;
+    padding: 20px 0 20px;;
 }
 
 .main__contacts-job {
@@ -118,10 +115,10 @@ main {
     margin-right: 20px;
 }
 
-.soc-menu__item:hover {
+/*.soc-menu__item:hover {
     transform: scale(1.1, 1.1);
     transition: 0.3s;
-}
+}*/
 
 .contacts-map {
     display: flex;
@@ -135,10 +132,10 @@ main {
     margin-right: 10px;
 }
 
-.contacts-map__link:hover {
+/*.contacts-map__link:hover {
     transform: scale(1.1, 1.1);
     transition: 0.3s;
-}
+}*/
 
 .button-block {
     padding: 20px 0;
@@ -160,12 +157,19 @@ main {
 }
 
 .button:hover {
-    background-color: bisque;
+    background-color: chocolate;
     transition: 0.3s;
 }
 
+.icons {
+    cursor: pointer;
+    
+}
+
 .icons:hover {
-    fill: bisque
+    fill:chocolate;
+    transform: scale(1.1, 1.1);
+    transition: 0.3s;
 }
 
 .main__foto {
@@ -183,9 +187,11 @@ main {
     right: -170px;
 }
 
+/*----------About----------*/
+
 .about {
     background-color: lightskyblue;
-    min-height: 2000px;
+    background-color: lightcyan;
 }
 
 .about__wrapper {
@@ -200,7 +206,7 @@ main {
     font-weight: 700;
     font-size: 34px;
     text-align: center;
-    padding: 20px;
+    padding: 40px;
 }
 
 .about__work {}
@@ -230,4 +236,107 @@ main {
     color: #808080;
     font-weight: 800;
     font-size: 14px;
+}
+
+/*----------Portfolio----------*/
+
+.portfolio {
+    background-color:#ccc;
+}
+
+.portfolio__wrapper {
+    background-color:#ccc;
+    font-weight: 700;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.portfolio__title {
+    width: 100%;
+    font-weight: 700;
+    font-size: 34px;
+    text-align: center;
+    padding: 40px;
+}
+
+.portfolio__card {
+    margin: 0 auto 10px;
+    z-index: 10;
+}
+.card {
+    border: 1px solid black;
+}
+
+.card__title {
+    text-align: center;
+    padding: 15px;
+    font-size: 24px;
+}
+
+.card__wrapper {
+    display: flex;
+    gap: 30px;
+    padding: 10px;
+}
+
+.card__preview-img {
+    max-width: 200px;
+}
+
+.card__content {
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card__content-description span {
+    color: #606060;
+}
+
+.link {
+    color: #000;
+    position: relative;
+    text-decoration: none;
+}
+
+.link::after {
+    position: absolute;
+    content: '';
+    left: 0px;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    transform: scale(0);
+    transition: all 0.3s;
+    background: #666666;
+}
+.link:hover::after {
+    transform: scale(1);
+}
+
+.portfolio__arrow-blocks {
+    width: calc(100% - 30px);
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.arrow {
+    padding: 0 5px;
+    cursor: pointer;
+    border: 1px solid #f0ffff;
+    border-radius: 25px;
+    background-color: #bbb;
+}
+
+.arrow:hover {
+    fill:blanchedalmond;
+    fill:lightgoldenrodyellow;
+    border-color: lightgoldenrodyellow;
+    transform: scale(1.1, 1.1);
+    transition: 0.3s;
 }
