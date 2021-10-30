@@ -6,8 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alexander Nikonov CV</title>
-    <!--<link rel="stylesheet" href="./css/normalize.css">-->
-    <link rel="import" href="intro.html">
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/main.css">
 </head>
@@ -113,7 +111,7 @@
                 </div>
             </section>
             <div class="main__foto">
-                <img src="/image/my-foto.jpg" alt="">
+                <img src="./src/img/my-foto.jpg" alt="My foto">
             </div>
         </div>
     </main>
@@ -189,46 +187,6 @@
 
             <h2 class="portfolio__title">Portfolio</h2>
 
-            <div class="portfolio__card card" style="display: none">
-                <h3 class="card__title">Wildlife</h3>
-                <div class="card__wrapper">
-                    <div class="card__preview">
-                        <img class="card__preview-img" src="./image/deploy-img/wildlife.jpg" alt="Wildlife">
-                    </div>
-                    <div class="card__content">
-                        <p class="card__content-description">Description: <span>lay out the page according to the layout
-                                from Figma.</span></p>
-                        <p><a class="link"
-                                href="https://rolling-scopes-school.github.io/stage0/#/stage0/tasks/wildlife">Link to
-                                task</a></p>
-                        <p><a class="link"
-                                href="https://rolling-scopes-school.github.io/nikonovao-JSFE2021Q1/Wildlife">Link to
-                                deploy</a></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="test"></div>
-
-            <div class="portfolio__card card" style="display: none">
-                <h3 class="card__title">Virtual Piano</h3>
-                <div class="card__wrapper">
-                    <div class="card__preview">
-                        <img class="card__preview-img" src="./image/deploy-img/virtual-piano.jpg" alt="virtual-piano">
-                    </div>
-                    <div class="card__content">
-                        <p class="card__content-description">Description: <span>On the basis of a ready-made layout,
-                                write an application - a virtual piano.</span></p>
-                        <p><a class="link"
-                                href="https://rolling-scopes-school.github.io/stage0/#/stage1/tasks/js-projects/virtual-piano">Link
-                                to task</a></p>
-                        <p><a class="link"
-                                href="https://rolling-scopes-school.github.io/nikonovao-JSFE2021Q1/virtual-piano">Link
-                                to deploy</a></p>
-                    </div>
-                </div>
-            </div>
-
             <div class="portfolio__arrow-blocks">
                 <svg class="arrow arrow-left" width="30px" height="100px" viewBox="7 0 10 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#f0ffff">
                     <g transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) translate(4.000000, 7.500000)" fill-rule="nonzero">
@@ -254,7 +212,7 @@
 
     <script>
         let count = 0;
-        let urlExternalPage = `intro` + count + '.html';
+        let urlExternalPage = `./src/pages/intro` + count + '.html';
         const portfolioTitle = document.querySelector('.portfolio__title');
         const arrowRight = document.querySelector('.arrow-right');
         const arrowLeft = document.querySelector('.arrow-left');
@@ -286,7 +244,7 @@
         function getNextPage() {
             if (count < 3) {
                 count++;
-                urlExternalPage = `intro` + count + '.html';
+                urlExternalPage = `./src/pages/intro` + count + '.html';
                 portfolioTitle.nextSibling.remove();
                 getExternalPage();
                 arrowRight.disabled = true;
@@ -297,7 +255,7 @@
         function getPreviousPage() {
             if (count > 0) {
                 count--;
-                urlExternalPage = `intro` + count + '.html';
+                urlExternalPage = `./src/pages/intro` + count + '.html';
                 portfolioTitle.nextSibling.remove();
                 getExternalPage();
                 arrowLeft.disabled = true;
@@ -306,52 +264,6 @@
         arrowLeft.addEventListener('click', getPreviousPage);
 
     </script>
-
-    <!--<script>
-         let count = 0;
-        let urlExternalPage = `intro` + count + '.html';
-
-        function getexternalPage () {
-            
-        }
-        const portfolioTitle = document.querySelector('.portfolio__title');
-        const arrowRight = document.querySelector('.arrow-right');
-        const externalPage = new XMLHttpRequest();
-        //let urlExternalPage = 'intro0.html'
-        externalPage.open("GET", urlExternalPage, true);
-        externalPage.responseType = "document";
-        externalPage.onreadystatechange = function () {
-            if (externalPage.readyState != 4) return
-            clearTimeout(timeout)
-            if (externalPage.status == 200) {
-                console.log("Все ок");
-                var portfolio_page = externalPage.responseXML.querySelector('.portfolio__card');
-                portfolioTitle.after(portfolio_page);
-            } else {
-                handleError(externalPage.statusText);
-            }
-        }
-        externalPage.send("a=5&b=4");
-        var timeout = setTimeout(function () { externalPage.abort(); handleError("Time over") }, 10000);
-        function handleError(message) {
-            console.log("Ошибка: " + message);
-        }
-
-        
-        function getImage() {
-            let count1 = 0;
-            count++;
-            console.log(count);
-            urlExternalPage = `intro` + count + '.html';
-            console.log(urlExternalPage);
-            arrowRight.disabled = true;
-            
-        }
-        arrowRight.addEventListener('click', getImage);
-
-
-
-    </script> -->
 
 </body>
 
