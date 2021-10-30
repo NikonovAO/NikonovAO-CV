@@ -15,14 +15,15 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 10;
+    z-index: 1000;
     opacity: 0.8;
-    background-color: antiquewhite;
-    background-color: cadetblue;
+    /*background-color: antiquewhite;
+    background-color: cadetblue;*/
+    background: linear-gradient(to right, rgb(0, 210, 255), rgb(58, 123, 213));
 }
 
 .header__wrapper {
-    background-color: cadetblue;
+    /*background-color: cadetblue;*/
     min-height: 50px;
     display: flex;
     align-items: center;
@@ -47,7 +48,7 @@ body {
 }
 
 .menu__link {
-    color: #434343;
+    color: #131313;
     font-weight: 600;
     line-height: 171%;
     position: relative;
@@ -73,14 +74,14 @@ body {
 /*----------Main----------*/
 
 main {
-    background-color: lightcyan;
-    background-color: lightskyblue;
+    /*background-color: lightskyblue;*/
+    background: linear-gradient(to right, lightcyan, lightskyblue);
 }
 
 .main__wrapper {
     padding-top: 100px;
     padding-bottom: 50px;
-    background-color: lightskyblue;
+    /*background-color: lightskyblue;*/
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -157,7 +158,7 @@ main {
 }
 
 .button:hover {
-    background-color: chocolate;
+    background-color: lightgoldenrodyellow;;
     transition: 0.3s;
 }
 
@@ -190,15 +191,19 @@ main {
 /*----------About----------*/
 
 .about {
-    background-color: lightskyblue;
-    background-color: lightcyan;
+    /*background-color: lightcyan;*/
+    background: linear-gradient(to right, rgb(224, 234, 252), rgb(207, 222, 243));
 }
 
 .about__wrapper {
-    background-color: lightcyan;
+   /* background-color: lightcyan;*/
     font-weight: 700;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    font-size: 15px;
+    padding-bottom: 50px;
 }
 
 .about__title {
@@ -206,12 +211,29 @@ main {
     font-weight: 700;
     font-size: 34px;
     text-align: center;
-    padding: 40px;
+    padding: 40px 5px 20px;
 }
 
-.about__work {}
+.about__work {
+    width: 47%;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 10px;
+    background: linear-gradient(
+    316deg, rgba(254, 189, 171, 0.74) 30%, rgba(243, 169, 248, 0.66) 51%, #E0D8F0 80%, #EAF7FE 128%, #EAF7FE 150%), linear-gradient(
+    316deg, rgba(254, 189, 171, 0.74) 30%, rgba(243, 169, 248, 0.66) 51%, #E0D8F0 80%, #EAF7FE 128%, #EAF7FE 150%);
 
-.work {}
+}
+
+.about__education {
+    width: 47%;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 10px;
+    background: linear-gradient(
+    316deg, rgba(254, 189, 171, 0.74) 30%, rgba(243, 169, 248, 0.66) 51%, #E0D8F0 80%, #EAF7FE 128%, #EAF7FE 150%), linear-gradient(
+    316deg, rgba(254, 189, 171, 0.74) 30%, rgba(243, 169, 248, 0.66) 51%, #E0D8F0 80%, #EAF7FE 128%, #EAF7FE 150%);
+}
 
 .work__title, .education__title, .courses__title {
     font-variant-caps: petite-caps;
@@ -219,8 +241,6 @@ main {
     font-size: 22px;
     padding-bottom: 10px;
 }
-
-.work__list {}
 
 .work__item, .education__item, .courses__item {
     padding-bottom: 10px;
@@ -241,11 +261,11 @@ main {
 /*----------Portfolio----------*/
 
 .portfolio {
-    background-color:#ccc;
+    /*background-color:#ccc;*/
+    background: linear-gradient(to right, rgb(173, 169, 150), rgb(242, 242, 242), rgb(219, 219, 219), rgb(234, 234, 234));
 }
 
 .portfolio__wrapper {
-    background-color:#ccc;
     font-weight: 700;
     display: flex;
     flex-wrap: wrap;
@@ -265,7 +285,8 @@ main {
     z-index: 10;
 }
 .card {
-    border: 1px solid black;
+    border-radius: 25px;
+    background: linear-gradient(to right, rgb(116, 235, 213), rgb(172, 182, 229));
 }
 
 .card__title {
