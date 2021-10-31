@@ -13,23 +13,23 @@
 <body>
     <header class="header">
         <div class="header__wrapper wrapper">
-            <a href="#" class="header__logo">my Cv</a>
-            <nav class="menu">
+            <a href="#main" class="header__logo">my Cv</a>
+            <nav class="menu" id="menu">
                 <ul class="menu__list">
                     <li class="menu__item">
-                        <a href="#" class="menu__link">Home</a>
+                        <a href="#main" class="menu__link">Home</a>
                     </li>
                     <li class="menu__item">
-                        <a href="#" class="menu__link">About</a>
+                        <a href="#about" class="menu__link">About</a>
                     </li>
                     <li class="menu__item">
-                        <a href="#" class="menu__link">Portfolio</a>
+                        <a href="#portfolio" class="menu__link">Portfolio</a>
                     </li>
                 </ul>
             </nav>
         </div>
     </header>
-    <main class="main">
+    <main class="main" id="main">
         <div class="main__wrapper wrapper">
             <section class="main__contacts">
                 <span class="main__contacts-hi">Hi, i am</span>
@@ -115,7 +115,7 @@
             </div>
         </div>
     </main>
-    <section class="about">
+    <section class="about" id="about">
         <div class="about__wrapper wrapper">
             <h2 class="about__title">About me</h2>
             <div class="about__work work">
@@ -182,22 +182,26 @@
 
         </div>
     </section>
-    <section class="portfolio">
+    <section class="portfolio" id="portfolio">
         <div class="portfolio__wrapper wrapper">
 
             <h2 class="portfolio__title">Portfolio</h2>
 
             <div class="portfolio__arrow-blocks">
-                <svg class="arrow arrow-left" width="30px" height="100px" viewBox="7 0 10 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#f0ffff">
-                    <g transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) translate(4.000000, 7.500000)" fill-rule="nonzero">
+                <svg class="arrow arrow-left" width="30px" height="100px" viewBox="7 0 10 24" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#f0ffff">
+                    <g transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) translate(4.000000, 7.500000)"
+                        fill-rule="nonzero">
                         <path
                             d="M0.469669914,0.469669914 C0.735936477,0.203403352 1.15260016,0.1791973 1.44621165,0.397051761 L1.53033009,0.469669914 L8,6.939 L14.4696699,0.469669914 C14.7359365,0.203403352 15.1526002,0.1791973 15.4462117,0.397051761 L15.5303301,0.469669914 C15.7965966,0.735936477 15.8208027,1.15260016 15.6029482,1.44621165 L15.5303301,1.53033009 L8.53033009,8.53033009 C8.26406352,8.79659665 7.84739984,8.8208027 7.55378835,8.60294824 L7.46966991,8.53033009 L0.469669914,1.53033009 C0.176776695,1.23743687 0.176776695,0.762563133 0.469669914,0.469669914 Z"
                             id="Stroke-1"></path>
                     </g>
                 </svg>
 
-                <svg class="arrow arrow-right" width="30px" height="100px" viewBox="7 0 10 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#f0ffff">
-                    <g transform="translate(12.000000, 12.000000) rotate(-90.000000) translate(-12.000000, -12.000000) translate(4.000000, 7.500000)" fill-rule="nonzero">
+                <svg class="arrow arrow-right" width="30px" height="100px" viewBox="7 0 10 24" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#f0ffff">
+                    <g transform="translate(12.000000, 12.000000) rotate(-90.000000) translate(-12.000000, -12.000000) translate(4.000000, 7.500000)"
+                        fill-rule="nonzero">
                         <path
                             d="M0.469669914,0.469669914 C0.735936477,0.203403352 1.15260016,0.1791973 1.44621165,0.397051761 L1.53033009,0.469669914 L8,6.939 L14.4696699,0.469669914 C14.7359365,0.203403352 15.1526002,0.1791973 15.4462117,0.397051761 L15.5303301,0.469669914 C15.7965966,0.735936477 15.8208027,1.15260016 15.6029482,1.44621165 L15.5303301,1.53033009 L8.53033009,8.53033009 C8.26406352,8.79659665 7.84739984,8.8208027 7.55378835,8.60294824 L7.46966991,8.53033009 L0.469669914,1.53033009 C0.176776695,1.23743687 0.176776695,0.762563133 0.469669914,0.469669914 Z"
                             id="Stroke-1">
@@ -238,8 +242,8 @@
                 console.log("Ошибка: " + message);
             }
         }
-        getExternalPage();
 
+        getExternalPage();
 
         function getNextPage() {
             if (count < 3) {
@@ -250,6 +254,7 @@
                 arrowRight.disabled = true;
             }
         }
+
         arrowRight.addEventListener('click', getNextPage);
 
         function getPreviousPage() {
@@ -261,7 +266,32 @@
                 arrowLeft.disabled = true;
             }
         }
+
         arrowLeft.addEventListener('click', getPreviousPage);
+
+        function scrollMenu() {
+            document.querySelectorAll('a[href^="#"').forEach(link => {
+                link.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    let href = this.getAttribute('href').substring(1);
+                    const scrollTarget = document.getElementById(href);
+                    const topOffset = document.querySelector('.header').offsetHeight;
+                    const elementPosition = scrollTarget.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition - topOffset;
+                    window.scrollBy({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        }
+
+        scrollMenu();
+        
+    </script>
+
+
+    <script>
 
     </script>
 
