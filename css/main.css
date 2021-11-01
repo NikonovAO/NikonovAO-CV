@@ -17,13 +17,10 @@ body {
     width: 100%;
     z-index: 1000;
     opacity: 0.8;
-    /*background-color: antiquewhite;
-    background-color: cadetblue;*/
     background: linear-gradient(to right, rgb(0, 210, 255), rgb(58, 123, 213));
 }
 
 .header__wrapper {
-    /*background-color: cadetblue;*/
     min-height: 50px;
     display: flex;
     align-items: center;
@@ -38,9 +35,24 @@ body {
     white-space: nowrap;
 }
 
+@media (max-width: 480px) {
+    .header__logo {
+        display: none;
+    }
+    .menu {
+        width: 100%;
+    }
+}
+
 .menu__list {
     list-style-type: none;
     display: flex;
+}
+
+@media (max-width: 480px) {
+    .menu__list {
+        justify-content: space-around;
+    }
 }
 
 .menu__item:not(:last-child) {
@@ -53,6 +65,13 @@ body {
     line-height: 171%;
     position: relative;
     text-decoration: none;
+}
+
+@media (max-width: 480px) {
+    .menu__link {
+        font-weight: 800;
+        font-size: 20px;
+    }
 }
 
 .menu__link::after {
@@ -73,15 +92,13 @@ body {
 
 /*----------Main----------*/
 
-main {
-    /*background-color: lightskyblue;*/
+.main {
     background: linear-gradient(to right, lightcyan, lightskyblue);
 }
 
 .main__wrapper {
     padding-top: 100px;
     padding-bottom: 50px;
-    /*background-color: lightskyblue;*/
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -97,7 +114,8 @@ main {
     font-weight: 700;
     font-size: 34px;
     border-bottom: 1px solid #434343;
-    padding: 20px 0 20px;;
+    padding: 20px 0 20px;
+    ;
 }
 
 .main__contacts-job {
@@ -116,11 +134,6 @@ main {
     margin-right: 20px;
 }
 
-/*.soc-menu__item:hover {
-    transform: scale(1.1, 1.1);
-    transition: 0.3s;
-}*/
-
 .contacts-map {
     display: flex;
     align-items: center;
@@ -132,11 +145,6 @@ main {
     text-decoration: none;
     margin-right: 10px;
 }
-
-/*.contacts-map__link:hover {
-    transform: scale(1.1, 1.1);
-    transition: 0.3s;
-}*/
 
 .button-block {
     padding: 20px 0;
@@ -158,28 +166,34 @@ main {
 }
 
 .button:hover {
-    background-color: lightgoldenrodyellow;;
+    background-color: lightgoldenrodyellow;
+    ;
     transition: 0.3s;
 }
 
 .icons {
     cursor: pointer;
-    
 }
 
 .icons:hover {
-    fill:chocolate;
+    fill: chocolate;
     transform: scale(1.1, 1.1);
     transition: 0.3s;
 }
 
 .main__foto {
-    min-width: 380px;
-    min-height: 380px;
+    min-width: 370px;
+    min-height: 370px;
     border-radius: 50%;
     box-shadow: 0 0 0 0px lightskyblue, 0 0 30px #333;
     overflow: hidden;
     position: relative;
+}
+
+@media (max-width: 760px) {
+    .main__foto {
+        display: none;
+    }
 }
 
 .main__foto img {
@@ -188,15 +202,14 @@ main {
     right: -170px;
 }
 
+
 /*----------About----------*/
 
 .about {
-    /*background-color: lightcyan;*/
     background: linear-gradient(to right, rgb(224, 234, 252), rgb(207, 222, 243));
 }
 
 .about__wrapper {
-   /* background-color: lightcyan;*/
     font-weight: 700;
     display: flex;
     flex-wrap: wrap;
@@ -204,6 +217,29 @@ main {
     gap: 20px;
     font-size: 15px;
     padding-bottom: 50px;
+}
+
+@media (max-width: 1120px) {
+    .about__wrapper {
+        font-size: 13px;
+        font-weight: 800;
+    }
+}
+
+@media (max-width: 960px) {
+    .about__wrapper {
+        flex-direction: column;
+        align-items: center;
+        font-size: 16px;
+        word-spacing: 2px;
+    }
+}
+
+@media (max-width: 760px) {
+    .about__wrapper {
+        font-size: 14px;
+        word-spacing: 0;
+    }
 }
 
 .about__title {
@@ -214,35 +250,42 @@ main {
     padding: 40px 5px 20px;
 }
 
-.about__work {
+.about__work, .about__education, .about__skills {
     width: 47%;
     border: 1px solid black;
     border-radius: 20px;
     padding: 10px;
-    background: linear-gradient(
-    316deg, rgba(254, 189, 171, 0.74) 30%, rgba(243, 169, 248, 0.66) 51%, #E0D8F0 80%, #EAF7FE 128%, #EAF7FE 150%), linear-gradient(
-    316deg, rgba(254, 189, 171, 0.74) 30%, rgba(243, 169, 248, 0.66) 51%, #E0D8F0 80%, #EAF7FE 128%, #EAF7FE 150%);
-
+    background: linear-gradient( 316deg, rgba(254, 189, 171, 0.74) 30%, rgba(243, 169, 248, 0.66) 51%, #E0D8F0 80%, #EAF7FE 128%, #EAF7FE 150%), linear-gradient( 316deg, rgba(254, 189, 171, 0.74) 30%, rgba(243, 169, 248, 0.66) 51%, #E0D8F0 80%, #EAF7FE 128%, #EAF7FE 150%);
 }
 
-.about__education {
-    width: 47%;
-    border: 1px solid black;
-    border-radius: 20px;
-    padding: 10px;
-    background: linear-gradient(
-    316deg, rgba(254, 189, 171, 0.74) 30%, rgba(243, 169, 248, 0.66) 51%, #E0D8F0 80%, #EAF7FE 128%, #EAF7FE 150%), linear-gradient(
-    316deg, rgba(254, 189, 171, 0.74) 30%, rgba(243, 169, 248, 0.66) 51%, #E0D8F0 80%, #EAF7FE 128%, #EAF7FE 150%);
+
+@media (max-width: 1120px) {
+    .about__work, .about__education, .about__skills {
+        width: 46.5%;
+    }
 }
 
-.work__title, .education__title, .courses__title {
+@media (max-width: 960px) {
+    .about__work, .about__education, .about__skills {
+        width: 80%;
+    }
+}
+
+@media (max-width: 760px) {
+    .about__work, .about__education, .about__skills {
+        width: 95%;
+    }
+}
+
+.work__title, .education__title, .courses__title, .skills__title {
     font-variant-caps: petite-caps;
     font-weight: 900;
     font-size: 22px;
     padding-bottom: 10px;
+    text-align: center;
 }
 
-.work__item, .education__item, .courses__item {
+.work__item, .education__item, .courses__item, .skills__item {
     padding-bottom: 10px;
 }
 
@@ -258,10 +301,90 @@ main {
     font-size: 14px;
 }
 
+.skills__item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.skills__bar {
+    width: 60%;
+    height: 4px;
+    display: block;
+    background: #000;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 0 1rem #939393;
+    margin-right: 50px;
+}
+
+@media (max-width: 760px) {
+    .skills__bar {
+        width: 55%;
+    }
+}
+
+.skills__bar::before {
+    content: '';
+    height: 4px;
+    float: left;
+    background: white;
+    border-radius: 1px;
+}
+
+.skills__bar--html::before {
+    width: 50%;
+}
+
+.skills__bar--css::before {
+    width: 50%;
+}
+
+.skills__bar--js::before {
+    width: 30%;
+}
+
+.skills__bar--react::before {
+    width: 10%;
+}
+
+.skills__bar--git::before {
+    width: 30%;
+}
+
+.skills__bar--figma::before {
+    width: 30%;
+}
+
+.skills__bar--eng::before {
+    width: 10%;
+}
+
+.skills__bar--team::before {
+    width: 100%;
+}
+
+.skills__bar--learn::before {
+    width: 100%;
+}
+
+.skills__bar--flex::before {
+    width: 100%;
+}
+
+.skills__bar::after {
+    content: attr(data-value-skill);
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+}
+
 /*----------Portfolio----------*/
 
 .portfolio {
-    /*background-color:#ccc;*/
     background: linear-gradient(to right, rgb(173, 169, 150), rgb(242, 242, 242), rgb(219, 219, 219), rgb(234, 234, 234));
 }
 
@@ -284,9 +407,17 @@ main {
     margin: 0 auto 10px;
     z-index: 10;
 }
+
 .card {
+    width: 85%;
     border-radius: 25px;
     background: linear-gradient(to right, rgb(116, 235, 213), rgb(172, 182, 229));
+}
+
+@media (max-width: 760px) {
+    .card {
+        width: 75%;
+    }
 }
 
 .card__title {
@@ -301,12 +432,27 @@ main {
     padding: 10px;
 }
 
+@media (max-width: 760px) {
+    .card__wrapper {
+        flex-direction: column;
+    }
+    .card__preview {
+        text-align: center;
+    }
+}
+
 .card__preview-img {
     max-width: 200px;
 }
 
+@media (max-width: 450px) {
+    .card__preview-img {
+        max-width: 150px;
+    }
+}
+
 .card__content {
-    max-width: 400px;
+    /*max-width: 400px;*/
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -333,6 +479,7 @@ main {
     transition: all 0.3s;
     background: #666666;
 }
+
 .link:hover::after {
     transform: scale(1);
 }
@@ -355,8 +502,8 @@ main {
 }
 
 .arrow:hover {
-    fill:blanchedalmond;
-    fill:lightgoldenrodyellow;
+    fill: blanchedalmond;
+    fill: lightgoldenrodyellow;
     border-color: lightgoldenrodyellow;
     transform: scale(1.1, 1.1);
     transition: 0.3s;
