@@ -34,7 +34,7 @@
             <section class="main__contacts">
                 <span class="main__contacts-hi">Hi, i am</span>
                 <h1 class="main__contacts-name">Alexander Nikonov</h1>
-                <p class="main__contacts-job">Wanted job: Frontend developer</p>
+                <p class="main__contacts-job">Wanted job: Junior Frontend developer</p>
                 <div class="soc-menu">
                     <ul class="soc-menu__list">
                         <li class="soc-menu__item">
@@ -106,7 +106,7 @@
                     <span>Russia, Saratov</span>
                 </div>
                 <div class="button-block">
-                    <a href="" class="button-block__portfolio button">My portfolio</a>
+                    <!--<a href="" class="button-block__portfolio button">My portfolio</a>-->
                     <a href="" class="button-block__download button">Download resume</a>
                 </div>
             </section>
@@ -259,88 +259,7 @@
 
         </div>
     </section>
-
-    <script>
-        let count = 0;
-        let urlExternalPage = `./src/pages/intro` + count + '.html';
-        const portfolioTitle = document.querySelector('.portfolio__title');
-        const arrowRight = document.querySelector('.arrow-right');
-        const arrowLeft = document.querySelector('.arrow-left');
-        const externalPage = new XMLHttpRequest();
-
-        function getExternalPage() {
-            externalPage.open("GET", urlExternalPage, true);
-            externalPage.responseType = "document";
-            externalPage.onreadystatechange = function () {
-                if (externalPage.readyState != 4) return
-                clearTimeout(timeout)
-                if (externalPage.status == 200) {
-                    console.log("Все ок");
-                    let portfolio_page = externalPage.responseXML.querySelector('.portfolio__card');
-                    portfolioTitle.after(portfolio_page);
-                } else {
-                    handleError(externalPage.statusText);
-                }
-            }
-            externalPage.send("a=5&b=4");
-            var timeout = setTimeout(function () { externalPage.abort(); handleError("Time over") }, 10000);
-            function handleError(message) {
-                console.log("Ошибка: " + message);
-            }
-        }
-
-        getExternalPage();
-
-        function getNextPage() {
-            if (count < 3) {
-                count++;
-                urlExternalPage = `./src/pages/intro` + count + '.html';
-                portfolioTitle.nextSibling.remove();
-                getExternalPage();
-                arrowRight.disabled = true;
-            }
-        }
-
-        arrowRight.addEventListener('click', getNextPage);
-
-        function getPreviousPage() {
-            if (count > 0) {
-                count--;
-                urlExternalPage = `./src/pages/intro` + count + '.html';
-                portfolioTitle.nextSibling.remove();
-                getExternalPage();
-                arrowLeft.disabled = true;
-            }
-        }
-
-        arrowLeft.addEventListener('click', getPreviousPage);
-
-        function scrollMenu() {
-            document.querySelectorAll('a[href^="#"').forEach(link => {
-                link.addEventListener('click', function (event) {
-                    event.preventDefault();
-                    let href = this.getAttribute('href').substring(1);
-                    const scrollTarget = document.getElementById(href);
-                    const topOffset = document.querySelector('.header').offsetHeight;
-                    const elementPosition = scrollTarget.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition - topOffset;
-                    window.scrollBy({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
-                });
-            });
-        }
-
-        scrollMenu();
-
-    </script>
-
-
-    <script>
-
-    </script>
-
 </body>
+<script src="./app.js"></script>
 
 </html>

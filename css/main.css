@@ -115,7 +115,7 @@ body {
     font-size: 34px;
     border-bottom: 1px solid #434343;
     padding: 20px 0 20px;
-    ;
+    line-height: 100%;
 }
 
 .main__contacts-job {
@@ -242,6 +242,12 @@ body {
     }
 }
 
+@media (max-width: 480px) {
+    .about__wrapper {
+        font-size: 12px;
+    }
+}
+
 .about__title {
     width: 100%;
     font-weight: 700;
@@ -257,7 +263,6 @@ body {
     padding: 10px;
     background: linear-gradient( 316deg, rgba(254, 189, 171, 0.74) 30%, rgba(243, 169, 248, 0.66) 51%, #E0D8F0 80%, #EAF7FE 128%, #EAF7FE 150%), linear-gradient( 316deg, rgba(254, 189, 171, 0.74) 30%, rgba(243, 169, 248, 0.66) 51%, #E0D8F0 80%, #EAF7FE 128%, #EAF7FE 150%);
 }
-
 
 @media (max-width: 1120px) {
     .about__work, .about__education, .about__skills {
@@ -323,6 +328,12 @@ body {
 @media (max-width: 760px) {
     .skills__bar {
         width: 55%;
+    }
+}
+
+@media (max-width: 480px) {
+    .skills__bar {
+        width: 40%;
     }
 }
 
@@ -435,9 +446,16 @@ body {
 @media (max-width: 760px) {
     .card__wrapper {
         flex-direction: column;
+        font-size: 14px;
     }
     .card__preview {
         text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .card__wrapper {
+        font-size: 12px;
     }
 }
 
@@ -445,14 +463,13 @@ body {
     max-width: 200px;
 }
 
-@media (max-width: 450px) {
+@media (max-width: 480px) {
     .card__preview-img {
-        max-width: 150px;
+        max-width: 190px;
     }
 }
 
 .card__content {
-    /*max-width: 400px;*/
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -499,6 +516,15 @@ body {
     border: 1px solid #f0ffff;
     border-radius: 25px;
     background-color: #bbb;
+}
+
+@media (max-width: 480px) {
+    .arrow {
+        padding: 0;
+        border: none;
+        border-radius: 0;
+        background-color: transparent;
+    }
 }
 
 .arrow:hover {
