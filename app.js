@@ -42,8 +42,12 @@ function app() {
                 portfolioTitle.nextSibling.remove();
                 getExternalPage();
                 arrowRight.disabled = true;
+            } else {
+                count = 0;
+                portfolioTitle.nextSibling.remove();
+                getExternalPage();
+                arrowRight.disabled = true;
             }
-            if (count === numberPagesPortfolio) count = 0;
         }
         
         arrowRight.addEventListener('click', getNextPage);
@@ -54,9 +58,13 @@ function app() {
                 portfolioTitle.nextSibling.remove();
                 getExternalPage();
                 arrowLeft.disabled = true;
+            } else {
+                count = numberPagesPortfolio;
+                portfolioTitle.nextSibling.remove();
+                getExternalPage();
+                arrowRight.disabled = true;
             }
-            if (count === 0) count = numberPagesPortfolio;
-        }
+        } 
         
         arrowLeft.addEventListener('click', getPreviousPage);
     }
